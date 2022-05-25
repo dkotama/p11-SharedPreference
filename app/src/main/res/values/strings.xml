@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PertemuanSepuluhSharedPref</string>
+    <string name="input_username_hint">Input username</string>
+    <string name="input_password_hint">Input Password</string>
+    <string name="login_title">Login</string>
+    <string name="welcome_title">Selamat Datang!</string>
+</resources>
