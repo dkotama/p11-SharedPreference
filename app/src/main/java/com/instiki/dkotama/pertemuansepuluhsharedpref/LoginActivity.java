@@ -34,8 +34,10 @@ public class LoginActivity extends AppCompatActivity {
                 // Memasukkan tiap isian edit text kedalam variabel string
                String usernameStr = usernameET.getText().toString();
                String passwordStr = passwordET.getText().toString();
-
-
+                
+               // flag untuk menandakan apakah user input error atau tidak
+               Boolean isUserFound = false;
+                
                // melakukan perulangan terhadap data yang ada dengan foreach
                 for (User user: LoginDatabase.USER_DATABASE) {
                     // mencocokkan username & password
@@ -52,14 +54,15 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 // jika pada perulangan tidak ditemukan username & password yang cocok, maka tampilkan error
-                Toast.makeText(LoginActivity.this, "Username / Password Salah!", Toast.LENGTH_LONG).show();
+                // dengan melakukan checn isUserFound = false
+                if (!isUserFound) Toast.makeText(LoginActivity.this, "Username / Password Salah!", Toast.LENGTH_LONG).show();
             }
         });
     }
 
     @Override
     public void onBackPressed() {
-        // mengatur tombol back agar tidak ke halaman sebelumnya
+        // mengatur tombol back agar tidak ke halaman sebelumnya, melainkan exit aplikasi
         super.onBackPressed();
         this.finishAffinity();
     }
