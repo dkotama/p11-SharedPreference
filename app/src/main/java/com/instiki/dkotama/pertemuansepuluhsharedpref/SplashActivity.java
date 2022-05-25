@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 public class SplashActivity extends AppCompatActivity {
-    final Hander handler = new Handler(Looper.getMainLooper());
+    final Handler handler = new Handler(Looper.getMainLooper());
     Intent nextIntent;
         
     @Override
